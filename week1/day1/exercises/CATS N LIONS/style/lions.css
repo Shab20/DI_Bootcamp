@@ -1,0 +1,48 @@
+
+.bordered{
+    text-align: center;
+    border: 1px solide red;
+    
+}
+h3 {
+    color: red;
+}
+
+.table-wrapper {
+    padding: 0 40px 0 40px;
+}
+
+table {
+    width: 100%;
+}
+
+.cell-bordered {
+    border: 1px solid rgb(44, 39, 39);
+}
+
+.cell-centered {
+    text-align: center;
+}
+
+  .cell-centered{
+    color: red;
+    border-color: red;
+}
+
+.cell-half-width {
+    width: 50%;
+}
+
+.cell-padded {
+    padding: 8px 3px 8px 3px;
+}
+
+.cell-seperator {
+    padding-bottom: 20px;
+}
+
+
+.lion{
+    width: 100%;
+    height: auto;
+}
