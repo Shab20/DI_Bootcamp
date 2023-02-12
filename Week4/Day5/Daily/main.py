@@ -3,4 +3,4 @@ def sort_words(words):
     sorted_words = [word.strip() for word in sorted(words_list)]
     print(', '.join(sorted_words))
     
-    sort_words("book, cat, evening, morning")
+    sort_words("cat, book, morning, evening")
