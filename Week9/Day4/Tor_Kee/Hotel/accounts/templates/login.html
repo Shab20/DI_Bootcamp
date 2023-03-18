@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="text-center">Log In</h2>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% for field in form %}
+                <div class="form-group">
+                  {{ field.label_tag }}
+                  {{ field }}
+                  {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                  {% endif %}
+                </div>
+              {% endfor %}
+              <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

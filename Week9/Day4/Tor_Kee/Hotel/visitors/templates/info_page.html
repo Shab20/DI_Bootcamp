@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h1 class="text-center mb-5">Welcome to our hotel!</h1>
+      <p class="lead mb-5">We're so glad you're considering us for your next vacation. Our hotel offers a luxurious and comfortable experience that you won't soon forget. Whether you're looking for a relaxing getaway or an exciting adventure, we have everything you need to make your trip unforgettable.</p>
+      <p class="lead mb-5">Our rooms are spacious and beautifully decorated, with all the amenities you need to feel right at home. And our staff is always available to help you with anything you need, from booking local activities to making restaurant reservations.</p>
+      <div class="text-center">
+        <a href="{% url 'visitors:booking-create' %}" class="btn btn-primary btn-lg mr-3">Book Now</a>
+        <a href="{% url 'visitors:review-create' %}" class="btn btn-secondary btn-lg">Read Reviews</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <img src="{% static 'img/hotel1.jpg' %}" alt="Hotel Image" class="img-fluid">
+      <p class="mt-3">Our hotel offers luxurious and comfortable rooms that are perfect for both business and leisure travelers. With amenities like high-speed Wi-Fi, premium bedding, and in-room coffee makers, you'll feel right at home from the moment you arrive.</p>
+    </div>
+    <div class="col-md-6">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29936.730964111703!2d57.334029456781316!3d-20.296484800530067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c417c1f2a3627%3A0x9e26e29445b62355!2sFlic%20En%20Flac%20Beach!5e0!3m2!1sen!2smu!4v1679073474454!5m2!1sen!2smu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="mt-3">Our hotel is located in the heart of the city, just minutes away from some of the best attractions and activities that the area has to offer. With easy access to public transportation and plenty of parking available, getting around is a breeze.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
