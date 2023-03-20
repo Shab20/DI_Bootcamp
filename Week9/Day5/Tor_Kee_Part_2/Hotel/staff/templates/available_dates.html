@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block content %}
+    <h1>Available Dates</h1>
+    <hr>
+    <div class="row">
+        {% for date in dates %}
+        <div class="col-md-3 mb-3">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">{{ date|date:"l" }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ date|date:"F j" }}</h6>
+                    <p class="card-text">{{ date|date:"N" }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

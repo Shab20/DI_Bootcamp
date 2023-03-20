@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<body style="background-color: black;">
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <h1 class="text-center mb-5" style="color: white;">Welcome Staff members!</h1>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <table class="table table-bordered text-white">
+      <thead>
+        <tr>
+          <th scope="col" class="col-sm-3">LINK</th>
+          <th scope="col" class="col-sm-9">DESCRIPTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="{% url 'visitors:review_list' %}">Reviews</a></td>
+          <td>Delete negative comments and keep positive vibes for future visitors.</td>
+        </tr>
+        <tr>
+          <td><a href="{% url 'visitors:booking_list' %}">Bookings</a></td>
+          <td>View and modify bookings here.</td>
+        </tr>
+        <tr>
+          <td><a href="{% url 'visitors:available_dates' %}">Available Dates</a></td>
+          <td>View the dates available for booking.</td>
+        </tr>
+        <tr>
+          <td><a href="http://127.0.0.1:8000/admin/visitors/contact/" target="_blank">Visitors Messages</a></td>
+          <td>View the messages sent by visitors</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+
+{% endblock %}

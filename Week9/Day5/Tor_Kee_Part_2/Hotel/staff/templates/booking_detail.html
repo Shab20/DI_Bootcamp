@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container my-5">
+    <h1 class="mb-4">Booking Details</h1>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <th scope="row">First Name</th>
+          <td>{{ booking.first_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Last Name</th>
+          <td>{{ booking.last_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Email</th>
+          <td>{{ booking.email }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Check In</th>
+          <td>{{ booking.check_in }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Check Out</th>
+          <td>{{ booking.check_out }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Hotel</th>
+          <td>{{ booking.hotel }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="{% url 'staff:booking_list' %}" class="btn btn-primary">Back to List</a>
+  </div>
+{% endblock %}

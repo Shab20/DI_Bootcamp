@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Vacancies{% endblock %}
+
+{% block content %}
+    <h1>Vacancies</h1>
+    <hr>
+    <div class="row">
+        {% for availability in object_list %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ availability.room.name }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Availability: {{ availability.available }}</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>No vacancies available.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+

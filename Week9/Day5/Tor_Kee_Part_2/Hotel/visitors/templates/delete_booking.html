@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container my-5">
+    <h1>Delete Booking</h1>
+    <p>Are you sure you want to delete the booking for {{ booking.first_name }} {{ booking.last_name }}?</p>
+    <form action="{% url 'delete_booking' booking_id %}" method="post" class="d-inline">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Delete</button>
+      <a href="{% url 'list_bookings' %}" class="btn btn-secondary ml-2">Cancel</a>
+    </form>
+  </div>
+{% endblock %}

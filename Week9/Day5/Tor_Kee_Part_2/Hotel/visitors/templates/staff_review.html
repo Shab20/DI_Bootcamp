@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Write a Review{% endblock %}
+
+{% block content %}
+<h1>Reviews</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hotel</th>
+                    <th>Name</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                <tr>
+                    <td>{{ review.id}}</td>
+                    <td>{{ review.hotel }}</td>
+                    <td>{{ review.name }}</td>
+                    <td>{{ review.rating }}</td>
+                    <td>{{ review.comment }}</td>
+                    <td>
+                        <form method="post" action="{% url 'visitors:review_list' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="review_id" value="{{ review.id }}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+

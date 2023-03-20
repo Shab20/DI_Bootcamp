@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Write a Review{% endblock %}
+
+{% block content %}
+<h1>Reviews</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hotel</th>
+                    <th>Name</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                <tr>
+                    <td>{{ review.id}}</td>
+                    <td>{{ review.hotel }}</td>
+                    <td>{{ review.name }}</td>
+                    <td>{{ review.rating }}</td>
+                    <td>{{ review.comment }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Write a Review</h1>
+            <hr>
+            <form method="post" class="my-4">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
