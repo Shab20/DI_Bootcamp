@@ -1,0 +1,17 @@
+{% extends 'admin/base.html' %} 
+{% load static %}
+
+{% block branding %}
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'admin:index' %}">
+        <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        Admin Area
+    </a>
+</nav>  
+{% endblock %}
+
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+{% endblock %}
